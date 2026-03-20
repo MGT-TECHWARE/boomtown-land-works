@@ -177,6 +177,11 @@
             border: none;
             cursor: pointer;
             z-index: 1002;
+            padding: 10px;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
         }
 
         .hamburger span {
@@ -276,7 +281,6 @@
             background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('STOCK-IMAGES/landscaping/4.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             z-index: 1;
         }
 
@@ -340,6 +344,7 @@
 
         .hero-cta:hover {
             background-color: var(--primary-dark);
+            color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(139, 37, 0, 0.4);
         }
@@ -350,6 +355,7 @@
 
         /* Organic wavy bottom */
         .hero::after {
+            content: '';
             position: absolute;
             bottom: -1px;
             left: 0;
@@ -394,7 +400,7 @@
 
         .trust-badges {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
@@ -492,7 +498,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
             gap: 2rem;
             align-items: stretch;
         }
@@ -784,10 +790,19 @@
             .contact-form {
                 grid-column: 1;
                 order: 1;
+                padding: 1.25rem;
             }
 
             .contact-info {
                 order: 2;
+            }
+
+            .form-submit {
+                width: 100%;
+            }
+
+            .phone-button {
+                width: 100%;
             }
         }
 
@@ -881,6 +896,46 @@
             padding-top: 1.5rem;
             font-size: 0.9rem;
             opacity: 0.8;
+        }
+
+        /* ========== EXTRA-SMALL SCREENS ========== */
+        @media (max-width: 375px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero-cta {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .badge-icon {
+                font-size: 2rem;
+            }
+
+            .badge h3 {
+                font-size: 0.95rem;
+            }
+
+            .service-card {
+                height: 250px;
+            }
+
+            .service-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .service-card p {
+                font-size: 0.85rem;
+            }
+
+            .contact-form {
+                padding: 1rem;
+            }
+
+            .email-link {
+                word-break: break-all;
+            }
         }
 
         /* ========== CUSTOM SCROLLBAR ========== */
